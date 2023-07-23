@@ -4,6 +4,7 @@
     --colorPrimario: #784D3C;
     --colorBlanco: #FFF;
     --colorNegro: #000000;
+    --gris:#e1e1e1;
 }
 
 html{
@@ -35,6 +36,7 @@ html{
 
   h1, h2, h3, h4{
     font-family: var(--fuenteHeading);
+    line-height: 1.2;
   }
 
   h1{
@@ -50,11 +52,16 @@ html{
   }
 
   h4{
-    font-size: 2.8rem;
+    font-size: 2.4rem;
   }
 
-  img´{
+  img{
     max-width: 100%;
+  }
+
+  p{
+    font-size: 1.9rem;
+    font-family: var(--fuenteParrafos);
   }
 
   /************* UTILIDADES******** */
@@ -99,10 +106,6 @@ html{
   color: var(--colorBlanco);
 }
 
-.barra{
-
-}
-
 @media (min-width: 768px) {
   .barra{
     display:flex;
@@ -131,4 +134,74 @@ html{
       display: flex;
       gap: 2rem;
     }
+}
+
+/* ENTRADA BLOG Y SIDEBAR */
+
+@media (min-width: 768px) {
+    .contenido-principal{
+      display:grid;
+      grid-template-columns: 2fr 1fr;
+      column-gap: 4rem;
+    }
+}
+
+.entrada{
+  border-bottom: var(--gris) solid;
+  margin-bottom: 2rem;
+}
+
+.entrada:last-of-type{ /*QUITAMOS EL ULTIMO BORDE DE LA ULTIMA ENTRADA*/
+  border-bottom: unset;
+}
+
+.boton{
+  display: block;
+  color: var(--colorBlanco);
+  font-family: var(--fuenteHeading);
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.boton--entrada{
+  background-color: var(--colorNegro);
+}
+
+@media (min-width: 768px) {
+    .boton{
+      display:inline-block;
+      margin-bottom: 2rem;
+      max-width: 100%;
+      
+    }
+}
+
+.boton--secundario{
+  background-color: var(--colorPrimario);
+}
+
+.cursos{
+  list-style: none;
+}
+
+.widget-cursos{
+  border-bottom: solid var(--gris);
+  margin-bottom: 4rem;
+}
+
+.widget-cursos:last-of-type{
+  border-bottom: unset;
+  margin-bottom: 0;
+}
+
+.widget-cursos__label{
+  font-weight: 700;
+
+}
+
+.widget-cursos__info{
+  font-weight: normal;
 }
