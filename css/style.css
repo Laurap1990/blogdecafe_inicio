@@ -67,6 +67,23 @@ html{
     padding: 0;
   }
 
-  .centrat-texto{
+  .centrar-texto{
     text-align: center;
   }
+
+  /* HEADER**************** */
+
+
+.header{
+  background-image: url(../img/banner.jpg);
+  height: 58rem;
+  background-size: cover; /*AJUSTA EL TAMAÑO DE LA IMAGEN AL ESPACIO DISPONIBLE*/
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.header__texto{
+  font-family: var(--fuenteHeading);
+  color: var(--colorBlanco);
+  margin-top: 5rem;
+}
