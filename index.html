@@ -4,11 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog del café</title>
-    <link rel="stylesheet" href="css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!--PRELOAD--> <!--PARA CARGAR CON PRIORIDAD ESTOS ARCHIVOS-->
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" 
+    crossorigin="crossorigin" as="font">
+
+    <link rel="preload" href="">
+
+
 </head>
 <body>
 
@@ -39,9 +50,13 @@
     <div class="contenedor contenido-principal">
         <main class="blog">
             <h3>Nuestro Blog</h3>
+
             <article class="entrada">
                 <div class="entrada__imagen">
-                    <img src="img/blog1.jpg" alt="imagen blog">
+                    <picture>
+                        <source loading="lazy" srcset="img/blog1.webp" type="image/webp"> <!--PICTURE - SOURCE PARA CARGAR IMAGENES EN WEBP SI ES SOPORTADO-->
+                        <img loading="lazy" src="img/blog1.jpg" alt="imagen blog"> 
+                    </picture><!--LAZY LOADING PARA DESCARGAR LAS IMAGENES SEGUN SE REQUIERA-->
                 </div>
 
                 <div class="entrada__contenido">
@@ -56,7 +71,10 @@
 
             <article class="entrada">
                 <div class="entrada__imagen">
-                    <img src="img/blog2.jpg" alt="imagen blog">
+                    <picture>
+                        <source loading="lazy" srcset="img/blog2.webp" type="image/webp"> <!--PICTURE - SOURCE PARA CARGAR IMAGENES EN WEBP SI ES SOPORTADO-->
+                        <img loading="lazy" src="img/blog2.jpg" alt="imagen blog"> 
+                    </picture>
                 </div>
 
                 <div class="entrada__contenido">
@@ -65,13 +83,16 @@
                         blanditiis iusto unde numquam illo voluptas 
                         repellat cupiditate at! Magni aspernatur esse temporibus necessitatibus totam, 
                         corporis odit repellat!</p>
-                    <a class="boton boton--entrada" href="entrada.html">Leer entrada</a>
+                    <a class="boton boton--primario" href="entrada.html">Leer entrada</a>
                 </div>
             </article>
 
             <article class="entrada">
                 <div class="entrada__imagen">
-                    <img src="img/blog3.jpg" alt="imagen blog">
+                    <picture>
+                        <source loading="lazy" srcset="img/blog3.webp" type="image/webp"> <!--PICTURE - SOURCE PARA CARGAR IMAGENES EN WEBP SI ES SOPORTADO-->
+                        <img loading="lazy" src="img/blog3.jpg" alt="imagen blog"> 
+                    </picture>
                 </div>
 
                 <div class="entrada__contenido">
@@ -80,7 +101,7 @@
                         blanditiis iusto unde numquam illo voluptas 
                         repellat cupiditate at! Magni aspernatur esse temporibus necessitatibus totam, 
                         corporis odit repellat!</p>
-                    <a class="boton boton--entrada " href="entrada.html">Leer entrada</a>
+                    <a class="boton boton--primario " href="entrada.html">Leer entrada</a>
                 </div>
             </article>
         </main>
@@ -108,7 +129,24 @@
 
     </div>
 
+    <footer class="footer">
+        <div class="contenedor">
+            <div class="barra">
+                <a class="logo" href="index.html">
+                    <h1 class="logo__nombre no-margin centrar-texto">Blog<span class="logo__bold">DeCafé</span></h1>
+                </a>
 
-    
+                <nav class="navegacion">
+                    <a href="nosotros.html" class="navegacion__enlace">Nosotros</a>
+                    <a href="cursos.html" class="navegacion__enlace">Cursos</a>
+                    <a href="contacto.html" class="navegacion__enlace">Contacto</a>
+                </nav>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="js/modernizr.js"></script>    
 </body>
 </html>
