@@ -281,6 +281,21 @@ html{
 
 
 /* CONTACTO */
+.correcto{
+  background-color: green;
+  text-align: center;
+  color: var(--colorBlanco);
+  text-transform: uppercase;
+  border-radius: 2%;
+}
+
+.error{
+  background-color: red;
+  text-align: center;
+  color: var(--colorBlanco);
+  text-transform: uppercase;
+  border-radius: 2%;
+}
 
 .contacto__img{
   background-image: url(../img/contacto.jpg);
